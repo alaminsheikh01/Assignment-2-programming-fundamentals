@@ -39,3 +39,15 @@ for(let i=0; i < arr.length; i++)
 
 arr.length -= count;
 console.log(arr)
+
+const filteredArray = arr.filter((v) => typeof v == 'number');
+console.log(filteredArray)
+
+
+const newArr= []
+for(let i=0; i<arr.length; i++){
+    if(typeof arr[i] == 'number'){
+        newArr.push(arr[i])
+    }
+}
+console.log(newArr)
