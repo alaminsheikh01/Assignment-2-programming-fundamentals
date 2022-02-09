@@ -86,6 +86,8 @@ const microphone ={
         console.log('recording stopped')
     }
 }
+
+Object.freeze(microphone)
 microphone.newProperty = 'my new property'
 
 console.log(microphone)
