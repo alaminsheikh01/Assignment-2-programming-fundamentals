@@ -90,9 +90,12 @@ const microphone ={
 Object.freeze(microphone)
 microphone.newProperty = 'my new property'
 
+console.log(Object.keys(microphone))
+console.log(Object.values(microphone))
+
 console.log(microphone)
 
-
+ 
 /**
  * There are two different parts in Object
  * 1. Noun / Adjective (state/data/property)
