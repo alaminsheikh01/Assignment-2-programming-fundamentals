@@ -90,10 +90,10 @@ const microphone ={
 Object.freeze(microphone)
 microphone.newProperty = 'my new property'
 
-console.log(Object.keys(microphone))
-console.log(Object.values(microphone))
+// console.log(Object.keys(microphone))
+// console.log(Object.values(microphone))
 
-console.log(microphone)
+// console.log(microphone)
 
  
 /**
@@ -101,3 +101,12 @@ console.log(microphone)
  * 1. Noun / Adjective (state/data/property)
  * 2. Verb
  */
+
+ function uuidv4() {
+     return 'xxxxxx-xxxx-4xx-yxx-xxxxxxxxxxx'.replace(/[xy]/g, (c) =>{
+         const r = (Math.random() * 16) | 0;
+         const v = c == 'x' ? r : (r & 0x3) | 0x8;
+         return v.toString(16);
+     })
+ }
+ console.log(uuidv4())
