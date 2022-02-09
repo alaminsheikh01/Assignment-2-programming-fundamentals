@@ -63,6 +63,13 @@ const arr = [
     {id: 4, value: 40}
 ]
 
-const index = arr.findIndex(item => item.id == 3);
+// splice -> mutable
+const index = arr.findIndex(item => item.id == 2);
 const arr1 = arr.splice(index, 1)
-console.log(arr1)
+// console.log(arr1)
+
+
+// filter -> immutable
+const arr2 = arr.filter((item) => item.id !== 3);
+console.log(arr)
+console.log(arr2)
