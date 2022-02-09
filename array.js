@@ -70,6 +70,29 @@ const arr1 = arr.splice(index, 1)
 
 
 // filter -> immutable
-const arr2 = arr.filter((item) => item.id !== 3);
-console.log(arr)
-console.log(arr2)
+// const arr2 = arr.filter((item) => item.id !== 3);
+// console.log(arr)
+// console.log(arr2)
+
+const microphone ={
+    brand: 'Fifine',
+    indicator: true,
+    price: 8000,
+    color: 'Black',
+    startRecording() {
+        console.log('recording started')
+    },
+    stopRecording: () =>{
+        console.log('recording stopped')
+    }
+}
+microphone.newProperty = 'my new property'
+
+console.log(microphone)
+
+
+/**
+ * There are two different parts in Object
+ * 1. Noun / Adjective (state/data/property)
+ * 2. Verb
+ */
