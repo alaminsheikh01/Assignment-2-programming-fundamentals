@@ -164,23 +164,41 @@ const numbers = [2,3,4,5,6,7]
 // })
 //  console.log(students)
 
-const arr = []
-const arrToObj = {}
+// const arr = []
+// const arrToObj = {}
 
-for(let i=0; i < 5000000; i++){
-   const o ={
-       id: i,
-       value: i,
-   };
-   arr.push(o);
-   arrToObj[i] = o;
-}
-// console.log(arr.length)
-console.time('array');
-const index = arr.findIndex((item) => item.id == 4000000);
-arr.splice(index, 1)
-console.timeEnd('array')
+// for(let i=0; i < 5000000; i++){
+//    const o ={
+//        id: i,
+//        value: i,
+//    };
+//    arr.push(o);
+//    arrToObj[i] = o;
+// }
+// // console.log(arr.length)
+// console.time('array');
+// const index = arr.findIndex((item) => item.id == 4000000);
+// arr.splice(index, 1)
+// console.timeEnd('array')
 
-console.time('object')
-delete arrToObj[4000000];
-console.timeEnd('object')
+// console.time('object')
+// delete arrToObj[4000000];
+// console.timeEnd('object')
+
+// const num = [1,2,3,4,5, false, NaN, '', 6,7]
+// const strs = num.map(v => v.toString())
+// console.log(strs)
+
+// const filtered = num.filter((v) => !!v)
+// console.log(filtered)
+
+const result = numbers.reduce((acc, cur, index) =>{
+    if(index == 0 ) acc += '[';
+    if(cur) {
+        acc += cur.toString() + (index < numbers.length - 1 ? ', ': '');
+    }
+    if(index == numbers.length - 1) acc += ']';
+    return acc;
+}, '')
+
+console.log(result)
