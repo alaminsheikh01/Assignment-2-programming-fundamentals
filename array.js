@@ -153,6 +153,13 @@ students[idToUpdated] ={
     ...updatedData
 }
 
+// for(let key in students){
+//     console.log(students[key].name)
+// }
 
 
+// Object.keys(students).forEach((key) =>{
+//     const student = students[key];
+//     console.log(student.name, student.email)
+// })
 //  console.log(students)
