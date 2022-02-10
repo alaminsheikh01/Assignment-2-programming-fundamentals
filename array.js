@@ -192,13 +192,34 @@ const numbers = [2,3,4,5,6,7]
 // const filtered = num.filter((v) => !!v)
 // console.log(filtered)
 
-const result = numbers.reduce((acc, cur, index) =>{
-    if(index == 0 ) acc += '[';
-    if(cur) {
-        acc += cur.toString() + (index < numbers.length - 1 ? ', ': '');
-    }
-    if(index == numbers.length - 1) acc += ']';
-    return acc;
-}, '')
+// const result = numbers.reduce((acc, cur, index) =>{
+//     if(index == 0 ) acc += '[';
+//     if(cur) {
+//         acc += cur.toString() + (index < numbers.length - 1 ? ', ': '');
+//     }
+//     if(index == numbers.length - 1) acc += ']';
+//     return acc;
+// }, '')
 
-console.log(result)
+// console.log(result)
+
+
+// working data from server
+
+const axios = require('axios').default;
+const url = 'https://jsonplaceholder.typicode.com/posts'
+
+async function getData() {
+    const {data} = await axios.get(url);
+    const result = data.map(item => {
+        return {
+            userId: item.userId,
+            id: item.id,
+            title: item.title,
+        }
+    })
+    return result;
+}
+
+getData().then(data => console.log(data))
+.catch(e => console.log(e))
