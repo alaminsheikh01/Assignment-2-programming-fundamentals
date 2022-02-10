@@ -95,7 +95,7 @@ microphone.newProperty = 'my new property'
 
 // console.log(microphone)
 
- 
+
 /**
  * There are two different parts in Object
  * 1. Noun / Adjective (state/data/property)
@@ -110,3 +110,49 @@ microphone.newProperty = 'my new property'
      })
  }
  console.log(uuidv4())
+
+ const students = [
+    {
+        id: '4da52a-c4eb-4b7-9ff-3ed204e21ad',
+        name: 'Alamin Shiekh',
+        email: 'alamin@gmail.com'
+      },
+      {
+        id: 'd42527-83e8-4df-935-8ab96c21086',
+        name: 'Sheikh Alamin',
+        email: 'sheikh@gmail.com'
+      }
+ ]
+
+ // update
+//  const idToUpdate = 'd42527-83e8-4df-935-8ab96c21086';
+//  const updatedData = {
+//      name: 'Allahu akbar',
+//      email: 'allah1@gmail.com'
+//  };
+//  const updatedIndex = students.findIndex(item=> item.id == idToUpdate)
+// students[updatedIndex] = {
+//     id: idToUpdate,
+//     ...updatedData
+// }
+
+const std = {
+    id: uuidv4(),
+    name: 'Feroz khan',
+    email: 'feroz@gmail.com'
+};
+students[std.id] = std;
+
+const idToUpdated = 'd42527-83e8-4df-935-8ab96c21086'
+const updatedData = {
+    name: 'HM azijul',
+    email: 'azijul@gmail.com'
+};
+students[idToUpdated] ={
+    ...students[idToUpdated],
+    ...updatedData
+}
+
+
+
+//  console.log(students)
