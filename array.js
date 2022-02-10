@@ -56,17 +56,17 @@ const numbers = [2,3,4,5,6,7]
 // b = {a: 10};
 // console.log(a == b)
 
-const arr = [
-    {id: 1, value: 10},
-    {id: 2, value: 20},
-    {id: 3, value: 30},
-    {id: 4, value: 40}
-]
+// const arr = [
+//     {id: 1, value: 10},
+//     {id: 2, value: 20},
+//     {id: 3, value: 30},
+//     {id: 4, value: 40}
+// ]
 
 // splice -> mutable
-const index = arr.findIndex(item => item.id == 2);
-const arr1 = arr.splice(index, 1)
-// console.log(arr1)
+// const index = arr.findIndex(item => item.id == 2);
+// const arr1 = arr.splice(index, 1)
+// // console.log(arr1)
 
 
 // filter -> immutable
@@ -74,21 +74,21 @@ const arr1 = arr.splice(index, 1)
 // console.log(arr)
 // console.log(arr2)
 
-const microphone ={
-    brand: 'Fifine',
-    indicator: true,
-    price: 8000,
-    color: 'Black',
-    startRecording() {
-        console.log('recording started')
-    },
-    stopRecording: () =>{
-        console.log('recording stopped')
-    }
-}
+// const microphone ={
+//     brand: 'Fifine',
+//     indicator: true,
+//     price: 8000,
+//     color: 'Black',
+//     startRecording() {
+//         console.log('recording started')
+//     },
+//     stopRecording: () =>{
+//         console.log('recording stopped')
+//     }
+// }
 
-Object.freeze(microphone)
-microphone.newProperty = 'my new property'
+// Object.freeze(microphone)
+// microphone.newProperty = 'my new property'
 
 // console.log(Object.keys(microphone))
 // console.log(Object.values(microphone))
@@ -109,49 +109,49 @@ microphone.newProperty = 'my new property'
          return v.toString(16);
      })
  }
- console.log(uuidv4())
+//  console.log(uuidv4())
 
- const students = [
-    {
-        id: '4da52a-c4eb-4b7-9ff-3ed204e21ad',
-        name: 'Alamin Shiekh',
-        email: 'alamin@gmail.com'
-      },
-      {
-        id: 'd42527-83e8-4df-935-8ab96c21086',
-        name: 'Sheikh Alamin',
-        email: 'sheikh@gmail.com'
-      }
- ]
+//  const students = [
+//     {
+//         id: '4da52a-c4eb-4b7-9ff-3ed204e21ad',
+//         name: 'Alamin Shiekh',
+//         email: 'alamin@gmail.com'
+//       },
+//       {
+//         id: 'd42527-83e8-4df-935-8ab96c21086',
+//         name: 'Sheikh Alamin',
+//         email: 'sheikh@gmail.com'
+//       }
+//  ]
 
- // update
-//  const idToUpdate = 'd42527-83e8-4df-935-8ab96c21086';
-//  const updatedData = {
-//      name: 'Allahu akbar',
-//      email: 'allah1@gmail.com'
-//  };
-//  const updatedIndex = students.findIndex(item=> item.id == idToUpdate)
-// students[updatedIndex] = {
-//     id: idToUpdate,
+//  // update
+// //  const idToUpdate = 'd42527-83e8-4df-935-8ab96c21086';
+// //  const updatedData = {
+// //      name: 'Allahu akbar',
+// //      email: 'allah1@gmail.com'
+// //  };
+// //  const updatedIndex = students.findIndex(item=> item.id == idToUpdate)
+// // students[updatedIndex] = {
+// //     id: idToUpdate,
+// //     ...updatedData
+// // }
+
+// const std = {
+//     id: uuidv4(),
+//     name: 'Feroz khan',
+//     email: 'feroz@gmail.com'
+// };
+// students[std.id] = std;
+
+// const idToUpdated = 'd42527-83e8-4df-935-8ab96c21086'
+// const updatedData = {
+//     name: 'HM azijul',
+//     email: 'azijul@gmail.com'
+// };
+// students[idToUpdated] ={
+//     ...students[idToUpdated],
 //     ...updatedData
 // }
-
-const std = {
-    id: uuidv4(),
-    name: 'Feroz khan',
-    email: 'feroz@gmail.com'
-};
-students[std.id] = std;
-
-const idToUpdated = 'd42527-83e8-4df-935-8ab96c21086'
-const updatedData = {
-    name: 'HM azijul',
-    email: 'azijul@gmail.com'
-};
-students[idToUpdated] ={
-    ...students[idToUpdated],
-    ...updatedData
-}
 
 // for(let key in students){
 //     console.log(students[key].name)
@@ -163,3 +163,24 @@ students[idToUpdated] ={
 //     console.log(student.name, student.email)
 // })
 //  console.log(students)
+
+const arr = []
+const arrToObj = {}
+
+for(let i=0; i < 5000000; i++){
+   const o ={
+       id: i,
+       value: i,
+   };
+   arr.push(o);
+   arrToObj[i] = o;
+}
+// console.log(arr.length)
+console.time('array');
+const index = arr.findIndex((item) => item.id == 4000000);
+arr.splice(index, 1)
+console.timeEnd('array')
+
+console.time('object')
+delete arrToObj[4000000];
+console.timeEnd('object')
